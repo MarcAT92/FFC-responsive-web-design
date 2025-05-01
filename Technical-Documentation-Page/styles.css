@@ -1,106 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-    background-color: #fff;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Modern font */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  /* Lighter background */
+  color: #343a40;
+  /* Darker text */
+  line-height: 1.6;
+}
+
+/* Navbar Styles */
+#navbar {
+  width: 300px;
+  /* Slightly wider navbar */
+  background-color: #ffffff;
+  /* White background */
+  color: #343a40;
+  padding: 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #dee2e6;
+  /* Lighter border */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+  transition: transform 0.3s ease;
+  /* Smooth transition for responsiveness */
+}
+
+#navbar header {
+  font-size: 1.8rem;
+  /* Larger header */
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #212529;
+  /* Darker header color */
+  border-bottom: 1px solid #e9ecef;
+  /* Separator line */
+  padding-bottom: 15px;
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar li {
+  margin-bottom: 5px;
+  /* Reduced margin */
+}
+
+.nav-link {
+  display: block;
+  /* Make links block level */
+  padding: 10px 15px;
+  /* Add padding */
+  color: #007bff;
+  /* Standard link color */
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth hover */
+}
+
+.nav-link:hover {
+  background-color: #e9ecef;
+  /* Light background on hover */
+  color: #0056b3;
+  /* Darker blue on hover */
+  text-decoration: none;
+}
+
+/* Main Content Styles */
+#main-doc {
+  margin-left: 320px;
+  /* Adjust margin for wider navbar + padding */
+  padding: 40px;
+  width: calc(100% - 320px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  /* Smooth transition */
+}
+
+.main-section {
+  margin-bottom: 50px;
+  /* Increased space between sections */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.main-section header {
+  font-size: 1.75rem;
+  /* Larger section header */
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #212529;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+p {
+  margin: 15px 0;
+}
+
+code {
+  display: block;
+  background-color: #e9ecef;
+  /* Lighter code background */
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #007bff;
+  /* Accent border */
+  font-family: 'Courier New', Courier, monospace;
+  /* Monospace font */
+  border-radius: 5px;
+  overflow-x: auto;
+  /* Handle long code lines */
+  font-size: 0.95rem;
+  color: #343a40;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    /* Stack elements vertically */
   }
-  
-  /* Navbar Styles */
+
   #navbar {
-    width: 250px;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    overflow-y: auto;
-    border-right: 1px solid #ccc;
+    position: relative;
+    /* Change from fixed */
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    /* Ensure navbar stays above content scroll */
   }
-  
+
   #navbar header {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
   }
-  
+
   #navbar ul {
-    list-style: none;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap */
+    justify-content: center;
   }
-  
+
   #navbar li {
-    margin-bottom: 10px;
+    margin: 5px;
   }
-  
+
   .nav-link {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 1rem;
+    padding: 8px 12px;
   }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Main Content Styles */
+
   #main-doc {
-    margin-left: 270px;
-    padding: 50px;
-    width: calc(100% - 270px);
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
   }
-  
+
   .main-section {
-    margin-bottom: 40px;
+    padding: 20px;
   }
-  
+
   .main-section header {
     font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #000;
   }
-  
-  p {
-    margin: 10px 0;
-    line-height: 1.6;
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+
+  #navbar header {
+    font-size: 1.4rem;
+    /* Slightly smaller header */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
-  
-  code {
-    display: block;
-    background-color: #f9f9f9;
+
+  #navbar ul {
+    justify-content: space-around;
+    /* Better spacing for nav items */
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    /* Slightly smaller font */
+    padding: 5px 8px;
+    /* Reduced padding */
+  }
+
+  #main-doc {
     padding: 10px;
+    /* Reduced padding */
+  }
+
+  .main-section {
+    padding: 15px;
+    /* Keep padding reasonable */
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+    /* Reduced margin */
+    overflow-x: hidden;
+    /* Contain horizontal overflow within section */
+  }
+
+  .main-section header {
+    font-size: 1.2rem;
+    /* Smaller section header */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    /* Adjust paragraph font size */
     margin: 10px 0;
-    border-left: 4px solid #007bff;
-    font-family: monospace;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    #navbar {
-      position: static;
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    #main-doc {
-      margin-left: 0;
-      width: 100%;
-    }
+
+  code {
+    padding: 8px 0;
+    /* Remove horizontal padding */
+    font-size: 0.85rem;
+    /* Smaller code font */
+    border-left-width: 3px;
+    /* Thinner border */
+    margin: 10px 0;
+    max-width: 100%;
+    /* Prevent overflow */
+    overflow-wrap: break-word;
+    /* Wrap long lines */
+    word-break: break-all;
+    /* Ensure breaks even for long words/strings */
+    overflow-x: hidden;
+    /* Prevent code block horizontal scroll */
+    box-sizing: border-box;
+    /* Ensure padding/border are included in width */
   }
-  
-  @media (max-width: 375px) {
-    #navbar header {
-      font-size: 1.2rem;
-    }
-  
-    .nav-link {
-      font-size: 0.9rem;
-    }
-  }
+}

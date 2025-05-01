@@ -1,125 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey Form</title>
+  <title>Internet Provider Survey</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <main class="container">
     <!-- Page Title -->
-    <h1 id="title">Survey Form</h1>
+    <h1 id="title">Internet Provider Survey</h1>
 
     <!-- Short Explanation -->
     <p id="description">
-      Please fill out this survey to help us understand your preferences.
+      Help us understand your internet service experience by filling out this short survey.
     </p>
 
     <!-- Survey Form -->
     <form id="survey-form">
       <!-- Name Input -->
       <label id="name-label" for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Enter your name"
-        required
-      />
+      <input type="text" id="name" placeholder="Enter your name" required />
 
       <!-- Email Input -->
       <label id="email-label" for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Enter your email"
-        required
-      />
+      <input type="email" id="email" placeholder="Enter your email" required />
 
-      <!-- Number Input -->
-      <label id="number-label" for="number">Age:</label>
-      <input
-        type="number"
-        id="number"
-        placeholder="Enter your age"
-        min="10"
-        max="100"
-        required
-      />
+      <!-- Zip Code Input -->
+      <label id="number-label" for="zipcode">Zip Code:</label> <!-- Changed from Age to Zip Code -->
+      <input type="number" id="zipcode" placeholder="Enter your zip code" />
 
-      <!-- Dropdown -->
-      <label for="dropdown">Select your preference:</label>
-      <select id="dropdown">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
+      <!-- Dropdown for Current Provider -->
+      <label for="dropdown">What is your current internet service provider?</label>
+      <select id="dropdown" required>
+        <option disabled selected value>Select current provider</option>
+        <option value="provider1">Digicel</option>
+        <option value="provider2">Bmobile</option>
+        <option value="provider3">Flow</option>
+        <option value="provider4">RVR</option>
       </select>
 
-      <!-- Radio Buttons -->
+      <!-- Radio Buttons for Satisfaction -->
       <fieldset>
-        <legend>Select your gender:</legend>
+        <legend>How satisfied are you with your current internet service?</legend>
         <label>
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-          />
-          Male
+          <input type="radio" name="satisfaction" value="very-satisfied" required />
+          Very Satisfied
         </label>
         <label>
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-          />
-          Female
+          <input type="radio" name="satisfaction" value="satisfied" />
+          Satisfied
+        </label>
+        <label>
+          <input type="radio" name="satisfaction" value="neutral" />
+          Neutral
+        </label>
+        <label>
+          <input type="radio" name="satisfaction" value="dissatisfied" />
+          Dissatisfied
+        </label>
+        <label>
+          <input type="radio" name="satisfaction" value="very-dissatisfied" />
+          Very Dissatisfied
         </label>
       </fieldset>
 
-      <!-- Checkboxes -->
+      <!-- Checkboxes for Desired Features -->
       <fieldset>
-        <legend>Select your hobbies:</legend>
+        <legend>What features are most important to you in an internet service? (Check all that apply)</legend>
         <label>
-          <input
-            type="checkbox"
-            name="hobbies"
-            value="reading"
-          />
-          Reading
+          <input type="checkbox" name="features" value="speed" />
+          Download/Upload Speed
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="hobbies"
-            value="traveling"
-          />
-          Traveling
+          <input type="checkbox" name="features" value="reliability" />
+          Reliability / Uptime
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="hobbies"
-            value="sports"
-          />
-          Sports
+          <input type="checkbox" name="features" value="price" />
+          Price / Value
+        </label>
+        <label>
+          <input type="checkbox" name="features" value="customer-service" />
+          Customer Service
+        </label>
+        <label>
+          <input type="checkbox" name="features" value="no-data-caps" />
+          No Data Caps
         </label>
       </fieldset>
 
-      <!-- Textarea -->
-      <label for="comments">Additional Comments:</label>
-      <textarea
-        id="comments"
-        placeholder="Enter your comments here"
-        rows="4"
-      ></textarea>
+      <!-- Textarea for Additional Comments -->
+      <label for="comments">Any other comments or suggestions about internet service providers?</label>
+      <textarea id="comments" placeholder="Enter your comments here..." rows="4"></textarea>
 
       <!-- Submit Button -->
-      <button
-        id="submit"
-        type="submit"
-      >
-        Submit
+      <button id="submit" type="submit">
+        Submit Survey
       </button>
     </form>
   </main>
 </body>
+
 </html>
